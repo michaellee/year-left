@@ -1,0 +1,11 @@
+{
+  "name": "yearleft",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:michaellee/year-left.git",
+  "author": "Michael Lee <michaelsoolee@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "twitter": "^1.7.0"
+  }
+}
