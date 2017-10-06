@@ -29,9 +29,6 @@ let oneDay = 1000 * 60 * 60 * 24
 let day = Math.floor(diff / oneDay)
 
 let timeLeft  = Math.ceil((1 - (day/year)) * 100)
-let yesterday = Math.ceil((1 - ((day - 1)/year)) * 100)
-
-let override = process.argv[2] || false
 
 const empty = `░`
 const fill 	= `▓`
@@ -81,20 +78,16 @@ let timeRan = new Date()
 console.log('####Start####')
 console.log(timeRan)
 
-if (timeLeft < yesterday || override) {
-  client.post('statuses/update', { status: tweet }, (error) => {
-    if (error) {
-      console.log('!!!!!!!!')
-      console.log(tweet)
-      console.log('--------')
-      console.log(error)
-      console.log('#### End ####')
-    } else {
-      console.log('Successful run with tweet!')
-      console.log(tweet)
-      console.log('#### End ####')
-    }
-  })
-} else {
-  console.log('#### End ####')
-}
+client.post('statuses/update', { status: tweet }, (error) => {
+  if (error) {
+    console.log('!!!!!!!!')
+    console.log(tweet)
+    console.log('--------')
+    console.log(error)
+    console.log('#### End ####')
+  } else {
+    console.log('Successful run with tweet!')
+    console.log(tweet)
+    console.log('#### End ####')
+  }
+})
