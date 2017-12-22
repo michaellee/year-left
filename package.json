@@ -10,5 +10,8 @@
   },
   "devDependencies": {
     "jest": "^22.0.3"
+  },
+  "scripts": {
+    "lambda": "./scripts/lambda.sh"
   }
 }
