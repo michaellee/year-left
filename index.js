@@ -1,4 +1,5 @@
 const ENV = require('./env')
+const timeUtility = require('./time')
 
 let Twitter = require('twitter')
 
@@ -9,15 +10,10 @@ let client = new Twitter({
   access_token_secret:  ENV.ACCESS_SECRET
 })
 
-function leapYear(year) {
-  return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
-}
-
 let year = 365
-
 let currentYear = new Date().getFullYear()
 
-if (leapYear(currentYear)) {
+if (timeUtility.isLeapYear(currentYear)) {
   year = 366
 }
 
@@ -28,8 +24,8 @@ let diff = now - start
 let oneDay = 1000 * 60 * 60 * 24
 let day = Math.floor(diff / oneDay)
 
-let timeLeft  = Math.ceil((1 - (day/year)) * 100)
-let yesterday = Math.ceil((1 - ((day - 1)/year)) * 100)
+let timeLeft  = timeUtility.calculateTimeLeft(day, year)
+let yesterday = timeUtility.calculateTimeLeftYesterday(day, year)
 
 let override = process.argv[2] || false
 
