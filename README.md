@@ -1,6 +1,6 @@
 # @year_left
 
-This is the source code for a little Twitter bot called [@year_left][twitter]. @year_left is a simple bot that calculates the time left in the current year and tweets out a little graphical tweet. It is written in JavaScript and Node.js and gets run daily on a cron job on a Digital Ocean droplet.
+This is the source code for a little Twitter bot called [@year_left][twitter]. @year_left is a simple bot that calculates the time left in the current year and tweets out a little graphical tweet. It is written in JavaScript and Node.js and gets run daily on AWS Lambda.
 
 ## Getting it to run
 
