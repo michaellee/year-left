@@ -32,11 +32,16 @@ let override = process.argv[2] || false
 
 let tweet = `${graphicUtility.drawLine(timeLeft)} ${timeLeft}%\n[${day}/${year}]`
 
+if (day === 1) {
+  const newYear = `🤖 Happy new year, human! Hope you have an awesome year! 🎉\n`
+  tweet = newYear + tweet
+}
+
 let timeRan = new Date()
 console.log('####Start####')
 console.log(timeRan)
 
-if (timeLeft < yesterday || override) {
+if (timeLeft < yesterday || day === 1 || override) {
   client.post('statuses/update', { status: tweet }, (error) => {
     if (error) {
       console.log('!!!!!!!!')

@@ -27,6 +27,11 @@ for (let i = 1; i <= year; i++) {
 
 	console.log(`${day}/${year}`)
 
+  if (day === 1) {
+    let newYear = `🤖 Happy new year, human! Hope you have an awesome year! 🎉\n`
+    console.log(newYear + tweet)
+  }
+
 	if (timeLeft < yesterday) {
 	  console.log(tweet)
 	}
