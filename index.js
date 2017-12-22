@@ -1,6 +1,6 @@
 const ENV = require('./env')
-const timeUtility = require('./time')
-const graphicUtility = require('./graphic')
+const timeUtility = require('./src/utilities/time')
+const graphicUtility = require('./src/utilities/graphic')
 
 let Twitter = require('twitter')
 
