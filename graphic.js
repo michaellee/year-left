@@ -21,6 +21,16 @@ const mappings = [
 ]
 
 let drawLine = (timeLeft) => {
+  // Checks to see if last day of year, if it is then render completely empty
+  // line.
+  if (timeLeft === 0) {
+    let line = ''
+    for (let i = 1; i <= max; i++) {
+      line += empty
+    }
+    return line
+  }
+
   let fillCount = 0
 
   mappings.forEach((mapping, key) => {
