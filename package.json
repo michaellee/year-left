@@ -7,5 +7,8 @@
   "license": "MIT",
   "dependencies": {
     "twitter": "^1.7.0"
+  },
+  "devDependencies": {
+    "jest": "^22.0.3"
   }
 }
